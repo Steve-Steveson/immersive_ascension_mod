@@ -1,7 +1,6 @@
 package net.steveson.immersiveascension;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,7 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.steveson.immersiveascension.block.ModBlocks;
-import net.steveson.immersiveascension.item.AddonRailgunProjectiles;
 import net.steveson.immersiveascension.item.ModItems;
 import org.slf4j.Logger;
 
@@ -34,15 +32,12 @@ public class ImmersiveAscension
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        AddonRailgunProjectiles.register();
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

@@ -9,6 +9,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.steveson.immersiveascension.ImmersiveAscension;
+import net.steveson.immersiveascension.api.ATags;
 import net.steveson.immersiveascension.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
@@ -64,11 +65,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
             this.tag(IETags.grindingDiskHarvestable).add(
                     ModBlocks.SHEETMETAL_STAIRS.get(metal).get()
             );
-
-
-//            tag(IETags.sheetmetalSlabs).add(IEBlocks.TO_SLAB.get(Metals.SHEETMETAL.get(metal).getId()).get());
+            this.tag(ATags.STAIRS_SHEETMETAL).add(
+                    ModBlocks.SHEETMETAL_STAIRS.get(metal).get()
+            );
         }
-
 
         for(DyeColor dye : DyeColor.values())
         {
@@ -79,6 +79,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                     ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
             );
             this.tag(IETags.grindingDiskHarvestable).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
+            );
+            this.tag(ATags.STAIRS_SHEETMETAL).add(
                     ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
             );
         }
