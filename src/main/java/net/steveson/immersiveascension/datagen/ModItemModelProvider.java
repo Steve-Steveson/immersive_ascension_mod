@@ -51,8 +51,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 //                }
 //                simpleBlockAndItem(storage, storageModel);
 //            }
-
-//            stairsBlock(((StairBlock) ModBlocks.SHEETMETAL_STAIRS.get(m).get()), rl("block/metal/sheetmetal_"+name));
             evenSimplerBlockItem(ModBlocks.SHEETMETAL_STAIRS.get(m));
         }
 
