@@ -1,6 +1,7 @@
 package net.steveson.immersiveascension.block;
 
-import blusunrize.immersiveengineering.ImmersiveEngineering;
+import blusunrize.immersiveengineering.api.EnumMetals;
+import blusunrize.immersiveengineering.common.blocks.IEBaseBlock;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
@@ -10,10 +11,11 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,16 +24,49 @@ import net.steveson.immersiveascension.ImmersiveAscension;
 import net.steveson.immersiveascension.item.ModItems;
 
 import javax.annotation.Nullable;
+import java.util.EnumMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+
+    private static final Supplier<BlockBehaviour.Properties> SHEETMETAL_PROPERTIES = () -> Block.Properties.of()
+            .mapColor(MapColor.METAL)
+            .sound(SoundType.METAL)
+            .strength(2, 2); //Cauldron props are 2,2 and sheetmetal is similar
+
+
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, ImmersiveAscension.MOD_ID);
 
 
-//    public static final RegistryObject<Block> COPPER_SHEETMETAL_STAIRS = registerBlock("sheetmetal_stairs_copper",
-//            ()-> new StairBlock(()-> IEBlocks. .defaultBlockState(),
-//                    BlockBehaviour.Properties.copy(IEBlocks.)));
+    public static final RegistryObject<Block> INSULATING_GLASS_STAIRS = registerBlock("insulating_glass_stairs",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.INSULATING_GLASS.defaultBlockState(),
+                    IEBlocks.StoneDecoration.INSULATING_GLASS.getProperties()));
+
+
+
+//    public static final Map<EnumMetals,  RegistryObject<Block>> STORAGE_STAIRS = new EnumMap<>(EnumMetals.class);
+    public static final Map<EnumMetals,  RegistryObject<Block>> SHEETMETAL_STAIRS = new EnumMap<>(EnumMetals.class);
+
+    private static void metalInit()
+    {
+        for(EnumMetals m : EnumMetals.values())
+        {
+            String name = m.tagName();
+
+            RegistryObject<Block> sheetmetalStair = registerBlock("stairs_sheetmetal_"+name,
+                    ()-> new StairBlock(()-> {
+                        IEBlocks.BlockEntry<IEBaseBlock> blockEntry = IEBlocks.Metals.SHEETMETAL.get(m);
+                        return blockEntry.defaultBlockState();
+                        },
+                            SHEETMETAL_PROPERTIES.get())
+            );
+            SHEETMETAL_STAIRS.put(m, sheetmetalStair);
+        }
+    }
+
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
@@ -64,6 +99,7 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
+        metalInit();
     }
 
 }
