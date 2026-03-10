@@ -25,7 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        stairsBlock(((StairBlock) ModBlocks.INSULATING_GLASS_STAIRS.get()), rl("block/stone_decoration/insulating_glass"));
+//        stairsBlock(((StairBlock) ModBlocks.INSULATING_GLASS_STAIRS.get()), rl("block/stone_decoration/insulating_glass"));
 //        cubeAll(ModBlocks.INSULATING_GLASS_STAIRS.get(), rl("block/stone_decoration/insulating_glass"), translucent() );
 
 
@@ -39,10 +39,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 {
                     stairsBlock(((StairBlock) ModBlocks.STORAGE_STAIRS.get(m).get()), rl("block/metal/storage_"+name));
                 }
-                else {
-                    //temp code for U
-                    stairsBlock(((StairBlock) ModBlocks.STORAGE_STAIRS.get(m).get()), rl("block/metal/storage_"+name+"_side"));
-                }
+//                else {
+//                    //temp code for U
+//                    stairsBlock(((StairBlock) ModBlocks.STORAGE_STAIRS.get(m).get()), rl("block/metal/storage_"+name+"_side"));
+//                }
             }
             stairsBlock(((StairBlock) ModBlocks.SHEETMETAL_STAIRS.get(m).get()), rl("block/metal/sheetmetal_"+name));
         }
