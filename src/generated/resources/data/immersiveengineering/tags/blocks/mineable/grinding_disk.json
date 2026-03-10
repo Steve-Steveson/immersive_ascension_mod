@@ -10,6 +10,22 @@
     "immersive_ascension:stairs_sheetmetal_electrum",
     "immersive_ascension:stairs_sheetmetal_steel",
     "immersive_ascension:stairs_sheetmetal_iron",
-    "immersive_ascension:stairs_sheetmetal_gold"
+    "immersive_ascension:stairs_sheetmetal_gold",
+    "immersive_ascension:colored_stairs_sheetmetal_white",
+    "immersive_ascension:colored_stairs_sheetmetal_orange",
+    "immersive_ascension:colored_stairs_sheetmetal_magenta",
+    "immersive_ascension:colored_stairs_sheetmetal_light_blue",
+    "immersive_ascension:colored_stairs_sheetmetal_yellow",
+    "immersive_ascension:colored_stairs_sheetmetal_lime",
+    "immersive_ascension:colored_stairs_sheetmetal_pink",
+    "immersive_ascension:colored_stairs_sheetmetal_gray",
+    "immersive_ascension:colored_stairs_sheetmetal_light_gray",
+    "immersive_ascension:colored_stairs_sheetmetal_cyan",
+    "immersive_ascension:colored_stairs_sheetmetal_purple",
+    "immersive_ascension:colored_stairs_sheetmetal_blue",
+    "immersive_ascension:colored_stairs_sheetmetal_brown",
+    "immersive_ascension:colored_stairs_sheetmetal_green",
+    "immersive_ascension:colored_stairs_sheetmetal_red",
+    "immersive_ascension:colored_stairs_sheetmetal_black"
   ]
 }
