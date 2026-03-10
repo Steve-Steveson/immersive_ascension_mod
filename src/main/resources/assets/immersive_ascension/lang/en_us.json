@@ -1,6 +1,16 @@
 {
   "block.immersive_ascension.insulating_glass_stairs": "Insulating Glass Stairs",
 
+
+  "block.immersive_ascension.stairs_storage_aluminum": "Aluminum Stairs",
+  "block.immersive_ascension.stairs_storage_constantan": "Constantan Stairs",
+  "block.immersive_ascension.stairs_storage_electrum": "Electrum Stairs",
+  "block.immersive_ascension.stairs_storage_lead": "Lead Stairs",
+  "block.immersive_ascension.stairs_storage_nickel": "Nickel Stairs",
+  "block.immersive_ascension.stairs_storage_silver": "Silver Stairs",
+  "block.immersive_ascension.stairs_storage_steel": "Steel Stairs",
+  "block.immersive_ascension.stairs_storage_uranium": "Uranium Stairs",
+
   "block.immersive_ascension.stairs_sheetmetal_aluminum": "Aluminum Sheetmetal Stairs",
   "block.immersive_ascension.stairs_sheetmetal_constantan": "Constantan Sheetmetal Stairs",
   "block.immersive_ascension.stairs_sheetmetal_copper": "Copper Sheetmetal Stairs",

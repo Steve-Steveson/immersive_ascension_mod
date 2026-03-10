@@ -20,6 +20,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.INSULATING_GLASS_STAIRS.get());
 
+
         for(EnumMetals m : EnumMetals.values())
         {
             if(!m.isVanillaMetal())

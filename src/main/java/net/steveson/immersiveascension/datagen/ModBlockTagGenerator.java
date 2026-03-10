@@ -34,28 +34,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         for(EnumMetals metal : EnumMetals.values())
         {
-//            MetalTags tags = IETags.getTagsFor(metal);
-
-//            if(!metal.isVanillaMetal())
-//            {
-//                tag(tags.storage).add(IEBlocks.Metals.STORAGE.get(metal).get());
-//                tag(Tags.Blocks.STORAGE_BLOCKS).addTag(tags.storage);
-//                if(metal.shouldAddOre())
-//                {
-//                    Preconditions.checkNotNull(tags.ore);
-//                    tag(tags.ore)
-//                            .add(IEBlocks.Metals.ORES.get(metal).get())
-//                            .add(IEBlocks.Metals.DEEPSLATE_ORES.get(metal).get());
-//                    tag(Tags.Blocks.ORES).addTag(tags.ore);
-//                    Preconditions.checkNotNull(tags.rawBlock);
-//                    tag(tags.rawBlock).add(IEBlocks.Metals.RAW_ORES.get(metal).get());
-//                    tag(Tags.Blocks.STORAGE_BLOCKS).addTag(tags.rawBlock);
-//                    tag(Tags.Blocks.ORES_IN_GROUND_STONE).add(Metals.ORES.get(metal).get());
-//                    tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE).add(Metals.DEEPSLATE_ORES.get(metal).get());
-//                    tag(Tags.Blocks.ORE_RATES_SINGULAR).add(Metals.ORES.get(metal).get())
-//                            .add(Metals.DEEPSLATE_ORES.get(metal).get());
-//                }
-//            }
+            if(!metal.isVanillaMetal())
+            {
+                this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                        ModBlocks.STORAGE_STAIRS.get(metal).get()
+                );
+                this.tag(BlockTags.STAIRS).add(
+                        ModBlocks.STORAGE_STAIRS.get(metal).get()
+                );
+                this.tag(IETags.grindingDiskHarvestable).add(
+                        ModBlocks.STORAGE_STAIRS.get(metal).get()
+                );
+            }
             this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                     ModBlocks.SHEETMETAL_STAIRS.get(metal).get()
             );
