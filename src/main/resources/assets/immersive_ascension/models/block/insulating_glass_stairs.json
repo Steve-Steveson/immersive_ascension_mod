@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/stairs",
+  "parent": "immersive_ascension:block/stairs_transparent",
   "render_type":"minecraft:translucent",
   "textures": {
     "bottom": "immersiveengineering:block/stone_decoration/insulating_glass",
