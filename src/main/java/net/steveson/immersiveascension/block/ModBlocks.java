@@ -47,7 +47,7 @@ public class ModBlocks {
 
 
 
-//    public static final Map<EnumMetals,  RegistryObject<Block>> STORAGE_STAIRS = new EnumMap<>(EnumMetals.class);
+    public static final Map<EnumMetals,  RegistryObject<Block>> STORAGE_STAIRS = new EnumMap<>(EnumMetals.class);
     public static final Map<EnumMetals,  RegistryObject<Block>> SHEETMETAL_STAIRS = new EnumMap<>(EnumMetals.class);
     public static final Map<DyeColor, RegistryObject<Block>> COLORED_SHEETMETAL_STAIRS = new EnumMap<>(DyeColor.class);
 
@@ -56,6 +56,22 @@ public class ModBlocks {
         for(EnumMetals m : EnumMetals.values())
         {
             String name = m.tagName();
+
+            if(!m.isVanillaMetal())
+            {
+                RegistryObject<Block> metalStair = registerBlock("stairs_storage_"+name,
+                        ()-> new StairBlock(()-> {
+                            IEBlocks.BlockEntry<Block> blockEntry = IEBlocks.Metals.STORAGE.get(m);
+                            return blockEntry.defaultBlockState();
+                        },
+                                Block.Properties.of()
+                                        .mapColor(MapColor.METAL)
+                                        .sound(m==EnumMetals.STEEL?SoundType.NETHERITE_BLOCK: SoundType.METAL)
+                                        .strength(5, 10)
+                                        .requiresCorrectToolForDrops())
+                );
+                STORAGE_STAIRS.put(m, metalStair);
+            }
 
             RegistryObject<Block> sheetmetalStair = registerBlock("stairs_sheetmetal_"+name,
                     ()-> new StairBlock(()-> {

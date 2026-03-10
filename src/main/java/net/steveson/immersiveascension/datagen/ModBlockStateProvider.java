@@ -33,33 +33,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         for(EnumMetals m : EnumMetals.values())
         {
             String name = m.tagName();
-//            if(!m.isVanillaMetal())
-//            {
-//                if(m.shouldAddOre())
-//                {
-//                    cubeAll(Metals.ORES.get(m), modLoc("block/metal/ore_"+name));
-//                    cubeAll(Metals.DEEPSLATE_ORES.get(m), modLoc("block/metal/deepslate_ore_"+name));
-//                    cubeAll(Metals.RAW_ORES.get(m), modLoc("block/metal/raw_"+name));
-//                }
-//                ResourceLocation defaultStorageTexture = modLoc("block/metal/storage_"+name);
-//                BlockEntry<Block> storage = Metals.STORAGE.get(m);
-//                String storageName = name(storage);
-//                BlockModelBuilder storageModel;
-//                if(m==EnumMetals.URANIUM)
-//                {
-//                    ResourceLocation side = modLoc("block/metal/storage_"+name+"_side");
-//                    ResourceLocation top = modLoc("block/metal/storage_"+name+"_top");
-//                    storageModel = models().cubeBottomTop(storageName, side, top, top);
-//                    slabFor(storage, side, top, top);
-//                }
-//                else
-//                {
-//                    storageModel = models().cubeAll(storageName, defaultStorageTexture);
-//                    slabFor(storage, defaultStorageTexture);
-//                }
-//                simpleBlockAndItem(storage, storageModel);
-//            }
-
+            if(!m.isVanillaMetal())
+            {
+                if(m != EnumMetals.URANIUM)
+                {
+                    stairsBlock(((StairBlock) ModBlocks.STORAGE_STAIRS.get(m).get()), rl("block/metal/storage_"+name));
+                }
+                else {
+                    //temp code for U
+                    stairsBlock(((StairBlock) ModBlocks.STORAGE_STAIRS.get(m).get()), rl("block/metal/storage_"+name+"_side"));
+                }
+            }
             stairsBlock(((StairBlock) ModBlocks.SHEETMETAL_STAIRS.get(m).get()), rl("block/metal/sheetmetal_"+name));
         }
 
