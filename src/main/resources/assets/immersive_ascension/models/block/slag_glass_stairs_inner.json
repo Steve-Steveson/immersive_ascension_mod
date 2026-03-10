@@ -1,0 +1,9 @@
+{
+  "parent": "immersive_ascension:block/inner_stairs_transparent",
+  "render_type":"minecraft:translucent",
+  "textures": {
+    "bottom": "immersiveengineering:block/stone_decoration/slag_glass",
+    "side": "immersiveengineering:block/stone_decoration/slag_glass",
+    "top": "immersiveengineering:block/stone_decoration/slag_glass"
+  }
+}

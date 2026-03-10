@@ -19,6 +19,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
 
         this.dropSelf(ModBlocks.INSULATING_GLASS_STAIRS.get());
+        this.dropSelf(ModBlocks.SLAG_GLASS_STAIRS.get());
+        this.add(ModBlocks.SLAG_GLASS_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SLAG_GLASS_SLAB.get()));
 
 
         for(EnumMetals m : EnumMetals.values())
@@ -29,7 +32,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
             }
             this.dropSelf(ModBlocks.SHEETMETAL_STAIRS.get(m).get());
         }
-
 
         for(DyeColor dye : DyeColor.values())
         {

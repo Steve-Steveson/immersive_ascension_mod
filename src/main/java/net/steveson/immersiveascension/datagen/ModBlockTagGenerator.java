@@ -25,11 +25,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-                ModBlocks.INSULATING_GLASS_STAIRS.get()
+                ModBlocks.INSULATING_GLASS_STAIRS.get(),
+                ModBlocks.SLAG_GLASS_STAIRS.get(),
+                ModBlocks.SLAG_GLASS_SLAB.get()
         );
         this.tag(BlockTags.STAIRS).add(
-                ModBlocks.INSULATING_GLASS_STAIRS.get()
+                ModBlocks.INSULATING_GLASS_STAIRS.get(),
+                ModBlocks.SLAG_GLASS_STAIRS.get()
         );
+        this.tag(BlockTags.SLABS).add(
+                ModBlocks.SLAG_GLASS_SLAB.get()
+        );
+
 
 
         for(EnumMetals metal : EnumMetals.values())

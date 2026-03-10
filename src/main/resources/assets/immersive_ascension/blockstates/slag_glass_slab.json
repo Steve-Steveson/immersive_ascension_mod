@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersive_ascension:block/slag_glass_slab"
+    },
+    "type=double": {
+      "model": "immersiveengineering:block/slag_glass"
+    },
+    "type=top": {
+      "model": "immersive_ascension:block/slag_glass_slab_top"
+    }
+  }
+}

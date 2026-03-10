@@ -10,13 +10,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -44,6 +42,19 @@ public class ModBlocks {
     public static final RegistryObject<Block> INSULATING_GLASS_STAIRS = registerBlock("insulating_glass_stairs",
             ()-> new StairBlock(()-> IEBlocks.StoneDecoration.INSULATING_GLASS.defaultBlockState(),
                     IEBlocks.StoneDecoration.INSULATING_GLASS.getProperties()));
+    public static final RegistryObject<Block> SLAG_GLASS_STAIRS = registerBlock("slag_glass_stairs",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.SLAG_GLASS.defaultBlockState(),
+                    IEBlocks.StoneDecoration.SLAG_GLASS.getProperties()){
+                public int getLightBlock(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+                    return 8;
+                }
+            });
+    public static final RegistryObject<Block> SLAG_GLASS_SLAB = registerBlock("slag_glass_slab",
+            ()-> new SlabBlock( IEBlocks.StoneDecoration.SLAG_GLASS.getProperties()) {
+                public int getLightBlock(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+                    return 8;
+                }
+            });
 
 
 

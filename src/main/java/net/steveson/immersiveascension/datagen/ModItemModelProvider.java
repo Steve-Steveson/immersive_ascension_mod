@@ -22,6 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         evenSimplerBlockItem(ModBlocks.INSULATING_GLASS_STAIRS);
+        evenSimplerBlockItem(ModBlocks.SLAG_GLASS_STAIRS);
+        evenSimplerBlockItem(ModBlocks.SLAG_GLASS_SLAB);
 
 
         for(EnumMetals m : EnumMetals.values())
