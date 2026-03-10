@@ -11,5 +11,22 @@
   "block.immersive_ascension.stairs_sheetmetal_nickel": "Nickel Sheetmetal Stairs",
   "block.immersive_ascension.stairs_sheetmetal_silver": "Silver Sheetmetal Stairs",
   "block.immersive_ascension.stairs_sheetmetal_steel": "Steel Sheetmetal Stairs",
-  "block.immersive_ascension.stairs_sheetmetal_uranium": "Uranium Sheetmetal Stairs"
+  "block.immersive_ascension.stairs_sheetmetal_uranium": "Uranium Sheetmetal Stairs",
+
+  "block.immersive_ascension.colored_stairs_sheetmetal_black": "Black Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_blue": "Blue Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_brown": "Brown Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_cyan": "Cyan Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_gray": "Gray Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_green": "Green Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_light_blue": "Light Blue Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_light_gray": "Light Gray Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_lime": "Lime Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_magenta": "Magenta Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_orange": "Orange Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_pink": "Pink Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_purple": "Purple Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_red": "Red Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_white": "White Sheetmetal Stairs",
+  "block.immersive_ascension.colored_stairs_sheetmetal_yellow": "Yellow Sheetmetal Stairs"
 }

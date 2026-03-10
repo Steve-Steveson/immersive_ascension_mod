@@ -5,6 +5,7 @@ import blusunrize.immersiveengineering.common.blocks.IEBaseBlock;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -48,6 +49,7 @@ public class ModBlocks {
 
 //    public static final Map<EnumMetals,  RegistryObject<Block>> STORAGE_STAIRS = new EnumMap<>(EnumMetals.class);
     public static final Map<EnumMetals,  RegistryObject<Block>> SHEETMETAL_STAIRS = new EnumMap<>(EnumMetals.class);
+    public static final Map<DyeColor, RegistryObject<Block>> COLORED_SHEETMETAL_STAIRS = new EnumMap<>(DyeColor.class);
 
     private static void metalInit()
     {
@@ -64,7 +66,24 @@ public class ModBlocks {
             );
             SHEETMETAL_STAIRS.put(m, sheetmetalStair);
         }
+
+        for(DyeColor dye : DyeColor.values())
+        {
+            String name = dye.getName();
+
+            RegistryObject<Block> coloredSheetmetalStair = registerBlock("colored_stairs_sheetmetal_"+name,
+                    ()-> new StairBlock(()-> {
+                        IEBlocks.BlockEntry<IEBaseBlock> blockEntry = IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye);
+                        return blockEntry.defaultBlockState();
+                    },
+                            SHEETMETAL_PROPERTIES.get())
+            );
+            COLORED_SHEETMETAL_STAIRS.put(dye, coloredSheetmetalStair);
+        }
     }
+
+
+
 
 
 

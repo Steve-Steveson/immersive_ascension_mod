@@ -2,6 +2,7 @@ package net.steveson.immersiveascension.datagen;
 
 import blusunrize.immersiveengineering.api.EnumMetals;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -54,6 +55,10 @@ public class ModItemModelProvider extends ItemModelProvider {
             evenSimplerBlockItem(ModBlocks.SHEETMETAL_STAIRS.get(m));
         }
 
+        for(DyeColor dye : DyeColor.values())
+        {
+            evenSimplerBlockItem(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye));
+        }
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {

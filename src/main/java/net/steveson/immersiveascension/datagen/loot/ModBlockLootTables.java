@@ -1,9 +1,13 @@
 package net.steveson.immersiveascension.datagen.loot;
 
 import blusunrize.immersiveengineering.api.EnumMetals;
+import blusunrize.immersiveengineering.common.blocks.IEBaseBlock;
+import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.registries.RegistryObject;
 import net.steveson.immersiveascension.block.ModBlocks;
 
@@ -52,6 +56,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         }
 
 
+        for(DyeColor dye : DyeColor.values())
+        {
+            this.dropSelf(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get());
+        }
     }
 
     @Override

@@ -4,6 +4,7 @@ import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -60,6 +61,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
 //            }
 
             stairsBlock(((StairBlock) ModBlocks.SHEETMETAL_STAIRS.get(m).get()), rl("block/metal/sheetmetal_"+name));
+        }
+
+        for(DyeColor dye : DyeColor.values())
+        {
+            String name = dye.getName();
+
+            stairsBlock(((StairBlock) ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()), rl("block/metal/sheetmetal_"+name));
         }
     }
 }

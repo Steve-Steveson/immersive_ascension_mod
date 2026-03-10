@@ -5,6 +5,7 @@ import blusunrize.immersiveengineering.api.IETags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.steveson.immersiveascension.ImmersiveAscension;
@@ -69,5 +70,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         }
 
 
+        for(DyeColor dye : DyeColor.values())
+        {
+            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
+            );
+            this.tag(BlockTags.STAIRS).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
+            );
+            this.tag(IETags.grindingDiskHarvestable).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get()
+            );
+        }
     }
 }
