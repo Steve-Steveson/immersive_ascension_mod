@@ -26,7 +26,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         stairsBlock(((StairBlock) ModBlocks.CUT_URANIUM_STAIRS.get()), rl("block/metal/storage_uranium_side"));
-        slabBlock(((SlabBlock) ModBlocks.CUT_URANIUM_SLAB.get()), rl("block/storage_uranium"), rl("block/metal/storage_uranium_side"));
+        slabBlock(((SlabBlock) ModBlocks.CUT_URANIUM_SLAB.get()), blockTexture(ModBlocks.CUT_URANIUM_BLOCK.get()), rl("block/metal/storage_uranium_side"));
+        stairsBlock(((StairBlock) ModBlocks.PILLAR_URANIUM_STAIRS.get()), rl("block/metal/storage_uranium_top"), rl("block/metal/storage_uranium_side"), rl("block/metal/storage_uranium_side"));
+        slabBlock(((SlabBlock) ModBlocks.PILLAR_URANIUM_SLAB.get()), blockTexture(ModBlocks.PILLAR_URANIUM_BLOCK.get()), rl("block/metal/storage_uranium_top"), rl("block/metal/storage_uranium_side"), rl("block/metal/storage_uranium_side"));
+
 
 
         for(EnumMetals m : EnumMetals.values())

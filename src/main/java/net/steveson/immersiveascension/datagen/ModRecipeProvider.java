@@ -1,6 +1,7 @@
 package net.steveson.immersiveascension.datagen;
 
 import blusunrize.immersiveengineering.api.EnumMetals;
+import blusunrize.immersiveengineering.api.IETags;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -45,10 +46,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), 4)
+                .pattern("UU")
+                .pattern("UU")
+                .define('U', IETags.getItemTag(IETags.getTagsFor(EnumMetals.URANIUM).storage))
+                .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)), has(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)))
+                .save(consumer, ImmersiveAscension.MOD_ID + ":" + "crafting/" + getItemName(ModBlocks.CUT_URANIUM_BLOCK.get()));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), 2)
+                .pattern("U")
+                .pattern("U")
+                .define('U', IETags.getItemTag(IETags.getTagsFor(EnumMetals.URANIUM).storage))
+                .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)), has(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)))
+                .save(consumer, ImmersiveAscension.MOD_ID + ":" + "crafting/" + getItemName(ModBlocks.PILLAR_URANIUM_BLOCK.get()));
 
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_STAIRS, consumer);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_SLAB,consumer);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_STAIRS, consumer);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_SLAB,consumer);
+
+
+
+
+
+
 
     }
 

@@ -44,6 +44,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(ModBlocks.CUT_URANIUM_STAIRS);
         evenSimplerBlockItem(ModBlocks.CUT_URANIUM_SLAB);
         evenSimplerBlockItem(ModBlocks.PILLAR_URANIUM_BLOCK);
+        evenSimplerBlockItem(ModBlocks.PILLAR_URANIUM_STAIRS);
+        evenSimplerBlockItem(ModBlocks.PILLAR_URANIUM_SLAB);
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {

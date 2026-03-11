@@ -28,11 +28,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.STAIRS).add(
                 ModBlocks.INSULATING_GLASS_STAIRS.get().asItem(),
                 ModBlocks.SLAG_GLASS_STAIRS.get().asItem(),
-                ModBlocks.CUT_URANIUM_STAIRS.get().asItem()
+                ModBlocks.CUT_URANIUM_STAIRS.get().asItem(),
+                ModBlocks.PILLAR_URANIUM_STAIRS.get().asItem()
         );
         this.tag(ItemTags.SLABS).add(
                 ModBlocks.SLAG_GLASS_SLAB.get().asItem(),
-                ModBlocks.CUT_URANIUM_SLAB.get().asItem()
+                ModBlocks.CUT_URANIUM_SLAB.get().asItem(),
+                ModBlocks.PILLAR_URANIUM_SLAB.get().asItem()
         );
 
         this.tag(IETags.getItemTag(IETags.getTagsFor(EnumMetals.URANIUM).storage)).add(

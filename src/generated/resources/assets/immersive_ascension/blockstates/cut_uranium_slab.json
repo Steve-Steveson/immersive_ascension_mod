@@ -4,7 +4,7 @@
       "model": "immersive_ascension:block/cut_uranium_slab"
     },
     "type=double": {
-      "model": "immersiveengineering:block/storage_uranium"
+      "model": "immersive_ascension:block/cut_uranium_block"
     },
     "type=top": {
       "model": "immersive_ascension:block/cut_uranium_slab_top"

@@ -44,7 +44,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.CUT_URANIUM_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.CUT_URANIUM_SLAB.get()));
         this.dropSelf(ModBlocks.PILLAR_URANIUM_BLOCK.get());
-
+        this.dropSelf(ModBlocks.PILLAR_URANIUM_STAIRS.get());
+        this.add(ModBlocks.PILLAR_URANIUM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PILLAR_URANIUM_SLAB.get()));
     }
 
     @Override

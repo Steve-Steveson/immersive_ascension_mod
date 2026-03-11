@@ -31,17 +31,21 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.CUT_URANIUM_BLOCK.get(),
                 ModBlocks.CUT_URANIUM_STAIRS.get(),
                 ModBlocks.CUT_URANIUM_SLAB.get(),
-                ModBlocks.PILLAR_URANIUM_BLOCK.get()
+                ModBlocks.PILLAR_URANIUM_BLOCK.get(),
+                ModBlocks.PILLAR_URANIUM_STAIRS.get(),
+                ModBlocks.PILLAR_URANIUM_SLAB.get()
 
         );
         this.tag(BlockTags.STAIRS).add(
                 ModBlocks.INSULATING_GLASS_STAIRS.get(),
                 ModBlocks.SLAG_GLASS_STAIRS.get(),
-                ModBlocks.CUT_URANIUM_STAIRS.get()
+                ModBlocks.CUT_URANIUM_STAIRS.get(),
+                ModBlocks.PILLAR_URANIUM_STAIRS.get()
         );
         this.tag(BlockTags.SLABS).add(
                 ModBlocks.SLAG_GLASS_SLAB.get(),
-                ModBlocks.CUT_URANIUM_SLAB.get()
+                ModBlocks.CUT_URANIUM_SLAB.get(),
+                ModBlocks.PILLAR_URANIUM_SLAB.get()
         );
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
@@ -52,7 +56,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.CUT_URANIUM_BLOCK.get(),
                 ModBlocks.CUT_URANIUM_STAIRS.get(),
                 ModBlocks.CUT_URANIUM_SLAB.get(),
-                ModBlocks.PILLAR_URANIUM_BLOCK.get()
+                ModBlocks.PILLAR_URANIUM_BLOCK.get(),
+                ModBlocks.PILLAR_URANIUM_STAIRS.get(),
+                ModBlocks.PILLAR_URANIUM_SLAB.get()
         );
         this.tag(IETags.getTagsFor(EnumMetals.URANIUM).storage).add(
                 ModBlocks.CUT_URANIUM_BLOCK.get(),
