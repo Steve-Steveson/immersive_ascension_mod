@@ -43,7 +43,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             if(!m.isVanillaMetal())
             {
                 registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.Metals.STORAGE.get(m), ModBlocks.STORAGE_STAIRS.get(m), consumer);
-                //more code goes here
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(IETags.getItemTag(IETags.getTagsFor(m).storage)), RecipeCategory.BUILDING_BLOCKS, ModBlocks.STORAGE_STAIRS.get(m).get(), 1)
+                        .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(m)), has(IEBlocks.Metals.STORAGE.get(m)))
+                        .save(consumer,  ImmersiveAscension.MOD_ID + ":" + "stonecutting/" + getItemName(ModBlocks.STORAGE_STAIRS.get(m).get()));
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(IETags.getItemTag(IETags.getTagsFor(m).storage)), RecipeCategory.BUILDING_BLOCKS,
+                                IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.STORAGE.get(m).get())), 2)
+                        .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(m)), has(IEBlocks.Metals.STORAGE.get(m)))
+                        .save(consumer,  ImmersiveAscension.MOD_ID + ":" + "stonecutting/" + getItemName(IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.STORAGE.get(m).get()))));
             }
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
             registerStonecuttingRecipe(IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
