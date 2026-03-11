@@ -25,6 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        stairsBlock(((StairBlock) ModBlocks.COKE_STAIRS.get()), rl("block/stone_decoration/coke"));
         stairsBlock(((StairBlock) ModBlocks.COKEBRICK_STAIRS.get()), rl("block/stone_decoration/cokebrick"));
         stairsBlock(((StairBlock) ModBlocks.BLASTBRICK_STAIRS.get()), rl("block/stone_decoration/blastbrick"));
         stairsBlock(((StairBlock) ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get()), rl("block/stone_decoration/blastbrick_reinforced"));

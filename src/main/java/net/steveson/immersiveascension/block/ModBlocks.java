@@ -4,6 +4,7 @@ import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.common.blocks.IEBaseBlock;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -109,6 +110,10 @@ public class ModBlocks {
         }
     }
 
+
+    public static final RegistryObject<Block> COKE_STAIRS = registerFuelBlock("stairs_coke",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.COKE.defaultBlockState(),
+                    IEBlocks.StoneDecoration.COKE.getProperties()), 32000);
 
     public static final RegistryObject<Block> COKEBRICK_STAIRS = registerBlock("stairs_cokebrick",
             ()-> new StairBlock(()-> IEBlocks.StoneDecoration.COKEBRICK.defaultBlockState(),

@@ -28,6 +28,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.INSULATING_GLASS_STAIRS.get(),
                 ModBlocks.SLAG_GLASS_STAIRS.get(),
                 ModBlocks.SLAG_GLASS_SLAB.get(),
+                ModBlocks.COKE_STAIRS.get(),
                 ModBlocks.COKEBRICK_STAIRS.get(),
                 ModBlocks.BLASTBRICK_STAIRS.get(),
                 ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get(),
@@ -43,6 +44,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.STAIRS).add(
                 ModBlocks.INSULATING_GLASS_STAIRS.get(),
                 ModBlocks.SLAG_GLASS_STAIRS.get(),
+                ModBlocks.COKE_STAIRS.get(),
                 ModBlocks.COKEBRICK_STAIRS.get(),
                 ModBlocks.BLASTBRICK_STAIRS.get(),
                 ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get(),

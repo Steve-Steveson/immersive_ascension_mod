@@ -28,6 +28,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.STAIRS).add(
                 ModBlocks.INSULATING_GLASS_STAIRS.get().asItem(),
                 ModBlocks.SLAG_GLASS_STAIRS.get().asItem(),
+                ModBlocks.COKE_STAIRS.get().asItem(),
                 ModBlocks.COKEBRICK_STAIRS.get().asItem(),
                 ModBlocks.BLASTBRICK_STAIRS.get().asItem(),
                 ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get().asItem(),
