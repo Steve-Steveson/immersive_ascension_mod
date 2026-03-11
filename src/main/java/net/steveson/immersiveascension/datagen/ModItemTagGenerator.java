@@ -5,18 +5,19 @@ import blusunrize.immersiveengineering.api.IETags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.steveson.immersiveascension.ImmersiveAscension;
+import net.steveson.immersiveascension.api.IAItemTags;
 import net.steveson.immersiveascension.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagGenerator extends ItemTagsProvider {
-    public ModItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+    public ModItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
         super(pOutput, pLookupProvider, pBlockTags, ImmersiveAscension.MOD_ID, existingFileHelper);
     }
 
@@ -39,5 +40,31 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModBlocks.PILLAR_URANIUM_BLOCK.get().asItem()
         );
 
+
+        for(EnumMetals metal : EnumMetals.values())
+        {
+            if(!metal.isVanillaMetal())
+            {
+                this.tag(ItemTags.STAIRS).add(
+                        ModBlocks.STORAGE_STAIRS.get(metal).get().asItem()
+                );
+            }
+            this.tag(ItemTags.STAIRS).add(
+                    ModBlocks.SHEETMETAL_STAIRS.get(metal).get().asItem()
+            );
+            this.tag(IAItemTags.STAIRS_SHEETMETAL).add(
+                    ModBlocks.SHEETMETAL_STAIRS.get(metal).get().asItem()
+            );
+        }
+
+        for(DyeColor dye : DyeColor.values())
+        {
+            this.tag(ItemTags.STAIRS).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get().asItem()
+            );
+            this.tag(IAItemTags.STAIRS_SHEETMETAL).add(
+                    ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get().asItem()
+            );
+        }
     }
 }

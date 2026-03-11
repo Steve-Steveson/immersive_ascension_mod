@@ -5,8 +5,8 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
-public class ATags {
-    private ATags() {
+public class IABlockTags {
+    private IABlockTags() {
 
     }
 
