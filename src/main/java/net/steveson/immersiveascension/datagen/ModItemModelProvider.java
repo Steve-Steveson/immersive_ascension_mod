@@ -40,6 +40,11 @@ public class ModItemModelProvider extends ItemModelProvider {
             evenSimplerBlockItem(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye));
         }
 
+        evenSimplerBlockItem(ModBlocks.COKEBRICK_STAIRS);
+        evenSimplerBlockItem(ModBlocks.BLASTBRICK_STAIRS);
+        evenSimplerBlockItem(ModBlocks.BLASTBRICK_REINFORCED_STAIRS);
+        evenSimplerBlockItem(ModBlocks.ALLOYBRICK_STAIRS);
+
         evenSimplerBlockItem(ModBlocks.CUT_URANIUM_BLOCK);
         evenSimplerBlockItem(ModBlocks.CUT_URANIUM_STAIRS);
         evenSimplerBlockItem(ModBlocks.CUT_URANIUM_SLAB);

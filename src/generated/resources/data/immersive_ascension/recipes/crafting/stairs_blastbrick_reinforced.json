@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "immersiveengineering:blastbrick_reinforced"
+    }
+  },
+  "pattern": [
+    "I  ",
+    "II ",
+    "III"
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersive_ascension:stairs_blastbrick_reinforced"
+  },
+  "show_notification": true
+}

@@ -41,6 +41,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> INSULATING_GLASS_STAIRS = registerBlock("insulating_glass_stairs",
             ()-> new StairBlock(()-> IEBlocks.StoneDecoration.INSULATING_GLASS.defaultBlockState(),
                     IEBlocks.StoneDecoration.INSULATING_GLASS.getProperties()));
+
     public static final RegistryObject<Block> SLAG_GLASS_STAIRS = registerBlock("slag_glass_stairs",
             ()-> new StairBlock(()-> IEBlocks.StoneDecoration.SLAG_GLASS.defaultBlockState(),
                     IEBlocks.StoneDecoration.SLAG_GLASS.getProperties()){
@@ -107,6 +108,24 @@ public class ModBlocks {
             COLORED_SHEETMETAL_STAIRS.put(dye, coloredSheetmetalStair);
         }
     }
+
+
+    public static final RegistryObject<Block> COKEBRICK_STAIRS = registerBlock("stairs_cokebrick",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.COKEBRICK.defaultBlockState(),
+                    IEBlocks.StoneDecoration.COKEBRICK.getProperties()));
+
+    public static final RegistryObject<Block> BLASTBRICK_STAIRS = registerBlock("stairs_blastbrick",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.BLASTBRICK.defaultBlockState(),
+                    IEBlocks.StoneDecoration.BLASTBRICK.getProperties()));
+
+    public static final RegistryObject<Block> BLASTBRICK_REINFORCED_STAIRS = registerBlock("stairs_blastbrick_reinforced",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED.defaultBlockState(),
+                    IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED.getProperties()));
+
+    public static final RegistryObject<Block> ALLOYBRICK_STAIRS = registerBlock("stairs_alloybrick",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.ALLOYBRICK.defaultBlockState(),
+                    IEBlocks.StoneDecoration.ALLOYBRICK.getProperties()));
+
 
 
     public static final RegistryObject<Block> CUT_URANIUM_BLOCK = registerBlock("cut_uranium_block",

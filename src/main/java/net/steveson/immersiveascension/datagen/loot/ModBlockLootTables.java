@@ -39,6 +39,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         }
 
 
+        this.dropSelf(ModBlocks.COKEBRICK_STAIRS.get());
+        this.dropSelf(ModBlocks.BLASTBRICK_STAIRS.get());
+        this.dropSelf(ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get());
+        this.dropSelf(ModBlocks.ALLOYBRICK_STAIRS.get());
+
         this.dropSelf(ModBlocks.CUT_URANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.CUT_URANIUM_STAIRS.get());
         this.add(ModBlocks.CUT_URANIUM_SLAB.get(),

@@ -25,6 +25,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        stairsBlock(((StairBlock) ModBlocks.COKEBRICK_STAIRS.get()), rl("block/stone_decoration/cokebrick"));
+        stairsBlock(((StairBlock) ModBlocks.BLASTBRICK_STAIRS.get()), rl("block/stone_decoration/blastbrick"));
+        stairsBlock(((StairBlock) ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get()), rl("block/stone_decoration/blastbrick_reinforced"));
+        stairsBlock(((StairBlock) ModBlocks.ALLOYBRICK_STAIRS.get()), rl("block/stone_decoration/alloybrick"));
+
         stairsBlock(((StairBlock) ModBlocks.CUT_URANIUM_STAIRS.get()), rl("block/metal/storage_uranium_side"));
         slabBlock(((SlabBlock) ModBlocks.CUT_URANIUM_SLAB.get()), blockTexture(ModBlocks.CUT_URANIUM_BLOCK.get()), rl("block/metal/storage_uranium_side"));
         stairsBlock(((StairBlock) ModBlocks.PILLAR_URANIUM_STAIRS.get()), rl("block/metal/storage_uranium_top"), rl("block/metal/storage_uranium_side"), rl("block/metal/storage_uranium_side"));

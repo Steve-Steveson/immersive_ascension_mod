@@ -46,6 +46,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
 
 
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.COKEBRICK, ModBlocks.COKEBRICK_STAIRS, consumer);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.BLASTBRICK, ModBlocks.BLASTBRICK_STAIRS, consumer);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED, ModBlocks.BLASTBRICK_REINFORCED_STAIRS, consumer);
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.ALLOYBRICK, ModBlocks.ALLOYBRICK_STAIRS, consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), 4)
                 .pattern("UU")
                 .pattern("UU")
