@@ -39,5 +39,11 @@
   "block.immersive_ascension.colored_stairs_sheetmetal_purple": "Purple Sheetmetal Stairs",
   "block.immersive_ascension.colored_stairs_sheetmetal_red": "Red Sheetmetal Stairs",
   "block.immersive_ascension.colored_stairs_sheetmetal_white": "White Sheetmetal Stairs",
-  "block.immersive_ascension.colored_stairs_sheetmetal_yellow": "Yellow Sheetmetal Stairs"
+  "block.immersive_ascension.colored_stairs_sheetmetal_yellow": "Yellow Sheetmetal Stairs",
+
+  "block.immersive_ascension.cut_uranium_block": "Cut Uranium Block",
+  "block.immersive_ascension.cut_uranium_stairs": "Cut Uranium Stairs",
+  "block.immersive_ascension.cut_uranium_slab": "Cut Uranium Slab",
+  "block.immersive_ascension.pillar_uranium_block": "Uranium Pillar Block"
+
 }

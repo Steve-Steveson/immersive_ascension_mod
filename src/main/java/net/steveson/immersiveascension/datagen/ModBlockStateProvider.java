@@ -5,11 +5,13 @@ import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import net.steveson.immersiveascension.ImmersiveAscension;
 import net.steveson.immersiveascension.block.ModBlocks;
 
@@ -21,12 +23,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
 
-
-
     @Override
     protected void registerStatesAndModels() {
-//        stairsBlock(((StairBlock) ModBlocks.SLAG_GLASS_STAIRS.get()), rl("block/stone_decoration/slag_glass"));
-//        slabBlock(((SlabBlock) ModBlocks.SLAG_GLASS_SLAB.get()), rl("block/stone_decoration/slag_glass"), rl("block/stone_decoration/slag_glass"));
+        stairsBlock(((StairBlock) ModBlocks.CUT_URANIUM_STAIRS.get()), rl("block/metal/storage_uranium_side"));
+        slabBlock(((SlabBlock) ModBlocks.CUT_URANIUM_SLAB.get()), rl("block/storage_uranium"), rl("block/metal/storage_uranium_side"));
 
 
         for(EnumMetals m : EnumMetals.values())

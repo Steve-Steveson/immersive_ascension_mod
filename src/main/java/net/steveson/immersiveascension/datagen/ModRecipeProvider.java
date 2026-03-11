@@ -43,6 +43,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         {
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), consumer);
         }
+
+
+
+
+        registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_STAIRS, consumer);
+        registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_SLAB,consumer);
+
     }
 
     private static void registerStairsCraftingRecipe(RecipeCategory category, ItemLike input, RegistryObject<Block> output, Consumer<FinishedRecipe> consumer) {

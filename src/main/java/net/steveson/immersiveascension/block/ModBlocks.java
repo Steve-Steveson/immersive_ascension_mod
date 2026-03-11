@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -110,8 +109,16 @@ public class ModBlocks {
     }
 
 
+    public static final RegistryObject<Block> CUT_URANIUM_BLOCK = registerBlock("cut_uranium_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM).get())));
+    public static final RegistryObject<Block> CUT_URANIUM_STAIRS = registerBlock("cut_uranium_stairs",
+            ()-> new StairBlock(()-> IEBlocks.StoneDecoration.SLAG_GLASS.defaultBlockState(),
+                    BlockBehaviour.Properties.copy(ModBlocks.CUT_URANIUM_BLOCK.get())));
+    public static final RegistryObject<Block> CUT_URANIUM_SLAB = registerBlock("cut_uranium_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.CUT_URANIUM_BLOCK.get())));
 
-
+    public static final RegistryObject<Block> PILLAR_URANIUM_BLOCK = registerBlock("pillar_uranium_block",
+            ()-> new Block(BlockBehaviour.Properties.copy(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM).get())));
 
 
 

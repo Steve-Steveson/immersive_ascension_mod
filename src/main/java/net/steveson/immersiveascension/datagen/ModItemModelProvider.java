@@ -39,6 +39,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         {
             evenSimplerBlockItem(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye));
         }
+
+        evenSimplerBlockItem(ModBlocks.CUT_URANIUM_BLOCK);
+        evenSimplerBlockItem(ModBlocks.CUT_URANIUM_STAIRS);
+        evenSimplerBlockItem(ModBlocks.CUT_URANIUM_SLAB);
+        evenSimplerBlockItem(ModBlocks.PILLAR_URANIUM_BLOCK);
     }
 
     public void evenSimplerBlockItem(RegistryObject<Block> block) {
