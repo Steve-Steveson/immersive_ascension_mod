@@ -32,18 +32,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_STAIRS, consumer);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_SLAB,consumer);
 
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.INSULATING_GLASS, ModBlocks.INSULATING_GLASS_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.INSULATING_GLASS, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.INSULATING_GLASS.get())).get(), consumer, 2);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_STAIRS, consumer);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_SLAB, consumer, 2);
+
 
         for(EnumMetals m : EnumMetals.values())
         {
             if(!m.isVanillaMetal())
             {
                 registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.Metals.STORAGE.get(m), ModBlocks.STORAGE_STAIRS.get(m), consumer);
+                //more code goes here
             }
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
             registerStonecuttingRecipe(IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
             registerStonecuttingRecipeIE(IEBlocks.Metals.SHEETMETAL.get(m), IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.SHEETMETAL.get(m).get())).get(), consumer, 2);
         }
-
         for(DyeColor dye : DyeColor.values())
         {
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), consumer);
@@ -57,6 +62,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.BLASTBRICK, ModBlocks.BLASTBRICK_STAIRS, consumer);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED, ModBlocks.BLASTBRICK_REINFORCED_STAIRS, consumer);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, IEBlocks.StoneDecoration.ALLOYBRICK, ModBlocks.ALLOYBRICK_STAIRS, consumer);
+
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.COKE, ModBlocks.COKE_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.COKE, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.COKE.get())).get(), consumer, 2);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.COKEBRICK, ModBlocks.COKEBRICK_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.COKEBRICK, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.COKEBRICK.get())).get(), consumer, 2);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.BLASTBRICK, ModBlocks.BLASTBRICK_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.BLASTBRICK, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.BLASTBRICK.get())).get(), consumer, 2);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED, ModBlocks.BLASTBRICK_REINFORCED_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED.get())).get(), consumer, 2);
+        registerStonecuttingRecipe(IEBlocks.StoneDecoration.ALLOYBRICK, ModBlocks.ALLOYBRICK_STAIRS, consumer);
+        registerStonecuttingRecipeIE(IEBlocks.StoneDecoration.ALLOYBRICK, IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.StoneDecoration.ALLOYBRICK.get())).get(), consumer, 2);
+
+
+
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), 4)
                 .pattern("UU")
@@ -72,16 +91,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)), has(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)))
                 .save(consumer, ImmersiveAscension.MOD_ID + ":" + "crafting/" + getItemName(ModBlocks.PILLAR_URANIUM_BLOCK.get()));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get())
+                .pattern("U")
+                .pattern("U")
+                .define('U', ModBlocks.PILLAR_URANIUM_SLAB.get())
+                .unlockedBy(getHasName(ModBlocks.PILLAR_URANIUM_SLAB.get()), has(ModBlocks.PILLAR_URANIUM_SLAB.get()))
+                .save(consumer, ImmersiveAscension.MOD_ID + ":" + "crafting/" + getItemName(ModBlocks.PILLAR_URANIUM_BLOCK.get()) + "_from_slab");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get())
+                .pattern("U")
+                .pattern("U")
+                .define('U', ModBlocks.CUT_URANIUM_SLAB.get())
+                .unlockedBy(getHasName(ModBlocks.CUT_URANIUM_SLAB.get()), has(ModBlocks.CUT_URANIUM_SLAB.get()))
+                .save(consumer, ImmersiveAscension.MOD_ID + ":" + "crafting/" + getItemName(ModBlocks.CUT_URANIUM_BLOCK.get()) + "_from_slab");
+
+
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_STAIRS, consumer);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_SLAB,consumer);
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_STAIRS, consumer);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_SLAB,consumer);
 
 
-//        registerStonecuttingRecipe(ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_STAIRS, consumer);
-//        registerStonecuttingRecipe(ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_SLAB, consumer, 2);
-//        registerStonecuttingRecipe(ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_STAIRS, consumer);
-//        registerStonecuttingRecipe(ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_SLAB, consumer, 2);
+
 
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(IETags.getItemTag(IETags.getTagsFor(EnumMetals.URANIUM).storage)), RecipeCategory.BUILDING_BLOCKS, IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM), 1)
                 .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)), has(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM)))

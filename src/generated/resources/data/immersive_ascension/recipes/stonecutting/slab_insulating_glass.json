@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "immersiveengineering:insulating_glass"
+  },
+  "result": "immersiveengineering:slab_insulating_glass"
+}
