@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "immersiveengineering:sheetmetal_gold"
+  },
+  "result": "immersiveengineering:slab_sheetmetal_gold"
+}

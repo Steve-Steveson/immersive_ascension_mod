@@ -3,6 +3,7 @@ package net.steveson.immersiveascension.datagen;
 import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.api.IETags;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -40,12 +41,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             }
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
             registerStonecuttingRecipe(IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), consumer);
+            registerStonecuttingRecipeIE(IEBlocks.Metals.SHEETMETAL.get(m), IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.SHEETMETAL.get(m).get())).get(), consumer, 2);
         }
 
         for(DyeColor dye : DyeColor.values())
         {
             registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS,IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), consumer);
             registerStonecuttingRecipe(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), consumer);
+            registerStonecuttingRecipeIE(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye).get())).get(), consumer, 2);
         }
 
 
@@ -74,11 +77,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerStairsCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_STAIRS, consumer);
         registerSlabCraftingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PILLAR_URANIUM_BLOCK.get(), ModBlocks.PILLAR_URANIUM_SLAB,consumer);
 
-
-//        for(DyeColor dye : DyeColor.values())
-//        {
-//            registerStonecuttingRecipe(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), consumer);
-//        }
 
 //        registerStonecuttingRecipe(ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_STAIRS, consumer);
 //        registerStonecuttingRecipe(ModBlocks.CUT_URANIUM_BLOCK.get(), ModBlocks.CUT_URANIUM_SLAB, consumer, 2);
@@ -133,7 +131,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                .save(consumer,  ImmersiveAscension.MOD_ID + ":" + "stonecutting/" + getItemName(output.get()));
 //    }
 
-
+    private static void registerStonecuttingRecipeIE(ItemLike input, Block output, Consumer<FinishedRecipe> consumer, int resultCount) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, output, resultCount)
+                .unlockedBy(getHasName(input), has(input))
+                .save(consumer,  ImmersiveAscension.MOD_ID + ":" + "stonecutting/" + getItemName(output));
+    }
 
     private static void registerStonecuttingRecipe(ItemLike input, RegistryObject<Block> output, Consumer<FinishedRecipe> consumer, int resultCount) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, output.get(), resultCount)
