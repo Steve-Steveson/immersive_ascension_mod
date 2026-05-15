@@ -1,4 +1,4 @@
-package net.steveson.morerailgunprojectiles;
+package net.steveson.immersiveascension;
 
 import java.util.List;
 

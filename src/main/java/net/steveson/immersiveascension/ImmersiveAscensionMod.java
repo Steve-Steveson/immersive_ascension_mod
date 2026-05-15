@@ -1,5 +1,7 @@
-package net.steveson.morerailgunprojectiles;
+package net.steveson.immersiveascension;
 
+import net.steveson.immersiveascension.block.ModBlocks;
+import net.steveson.immersiveascension.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -15,10 +17,10 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(MoreRailgunProjectilesMod.MOD_ID)
-public class MoreRailgunProjectilesMod {
+@Mod(ImmersiveAscensionMod.MOD_ID)
+public class ImmersiveAscensionMod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "more_railgun_projectiles";
+    public static final String MOD_ID = "immersive_ascension";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 //    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -48,7 +50,7 @@ public class MoreRailgunProjectilesMod {
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public MoreRailgunProjectilesMod(IEventBus modEventBus, ModContainer modContainer) {
+    public ImmersiveAscensionMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -63,6 +65,9 @@ public class MoreRailgunProjectilesMod {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
