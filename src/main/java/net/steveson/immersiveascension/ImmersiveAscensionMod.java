@@ -1,5 +1,6 @@
 package net.steveson.immersiveascension;
 
+import net.minecraft.world.item.CreativeModeTabs;
 import net.steveson.immersiveascension.block.ModBlocks;
 import net.steveson.immersiveascension.item.ModItems;
 import org.slf4j.Logger;
@@ -91,9 +92,11 @@ public class ImmersiveAscensionMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(EXAMPLE_BLOCK_ITEM);
-//        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.INSULATING_GLASS_STAIRS);
+            event.accept(ModBlocks.SLAG_GLASS_STAIRS);
+            event.accept(ModBlocks.SLAG_GLASS_SLAB);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

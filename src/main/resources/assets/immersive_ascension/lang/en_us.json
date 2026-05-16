@@ -1,4 +1,13 @@
 {
+  "block.immersive_ascension.insulating_glass_stairs": "Insulating Glass Stairs",
+  "block.immersive_ascension.slag_glass_stairs": "Slag Glass Stairs",
+  "block.immersive_ascension.slag_glass_slab": "Slag Glass Slab",
+
+
+
+
+
+
   "itemGroup.examplemod": "Example Mod Tab",
   "block.examplemod.example_block": "Example Block",
   "item.examplemod.example_item": "Example Item",

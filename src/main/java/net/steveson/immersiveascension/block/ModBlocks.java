@@ -1,10 +1,18 @@
 package net.steveson.immersiveascension.block;
 
+import blusunrize.immersiveengineering.common.register.IEBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -20,8 +28,25 @@ public class ModBlocks {
 
 
 
+    public static final DeferredBlock<StairBlock> INSULATING_GLASS_STAIRS = registerBlock("insulating_glass_stairs",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.INSULATING_GLASS.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.INSULATING_GLASS.get())));
 
-
+    public static final DeferredBlock<StairBlock> SLAG_GLASS_STAIRS = registerBlock("slag_glass_stairs",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.SLAG_GLASS.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.SLAG_GLASS.get())){
+                @Override
+                protected int getLightBlock(BlockState state, BlockGetter level, BlockPos pos) {
+                    return 8;
+                }
+            });
+    public static final DeferredBlock<SlabBlock> SLAG_GLASS_SLAB = registerBlock("slag_glass_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.SLAG_GLASS.get())){
+                @Override
+                protected int getLightBlock(BlockState state, BlockGetter level, BlockPos pos) {
+                    return 8;
+                }
+            });
 
 
 
