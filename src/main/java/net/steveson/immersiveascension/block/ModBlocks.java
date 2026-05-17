@@ -1,5 +1,6 @@
 package net.steveson.immersiveascension.block;
 
+import blusunrize.immersiveengineering.api.EnumMetals;
 import blusunrize.immersiveengineering.common.register.IEBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
@@ -48,6 +49,26 @@ public class ModBlocks {
                 }
             });
 
+
+    public static final DeferredBlock<Block> CUT_URANIUM_BLOCK = registerBlock("cut_uranium_block",
+            ()-> new Block(BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM).get())));
+
+    public static final DeferredBlock<StairBlock> CUT_URANIUM_STAIRS = registerBlock("cut_uranium_stairs",
+            ()-> new StairBlock( ModBlocks.CUT_URANIUM_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(ModBlocks.CUT_URANIUM_BLOCK.get())));
+
+    public static final DeferredBlock<SlabBlock> CUT_URANIUM_SLAB = registerBlock("cut_uranium_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(ModBlocks.CUT_URANIUM_BLOCK.get())));
+
+    public static final DeferredBlock<Block> PILLAR_URANIUM_BLOCK = registerBlock("pillar_uranium_block",
+            ()-> new Block(BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM).get())));
+
+    public static final DeferredBlock<StairBlock> PILLAR_URANIUM_STAIRS = registerBlock("pillar_uranium_stairs",
+            ()-> new StairBlock( ModBlocks.PILLAR_URANIUM_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(ModBlocks.PILLAR_URANIUM_BLOCK.get())));
+
+    public static final DeferredBlock<SlabBlock> PILLAR_URANIUM_SLAB = registerBlock("pillar_uranium_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(ModBlocks.PILLAR_URANIUM_BLOCK.get())));
 
 
 

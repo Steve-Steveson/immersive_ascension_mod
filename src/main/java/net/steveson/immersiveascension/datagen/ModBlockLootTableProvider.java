@@ -20,6 +20,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SLAG_GLASS_STAIRS.get());
         add(ModBlocks.SLAG_GLASS_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.SLAG_GLASS_SLAB.get()));
+
+
+
+        dropSelf(ModBlocks.CUT_URANIUM_BLOCK.get());
+        dropSelf(ModBlocks.CUT_URANIUM_STAIRS.get());
+        add(ModBlocks.CUT_URANIUM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CUT_URANIUM_SLAB.get()));
+        dropSelf(ModBlocks.PILLAR_URANIUM_BLOCK.get());
+        dropSelf(ModBlocks.PILLAR_URANIUM_STAIRS.get());
+        add(ModBlocks.PILLAR_URANIUM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PILLAR_URANIUM_SLAB.get()));
     }
 
     @Override

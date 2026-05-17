@@ -1,5 +1,7 @@
 package net.steveson.immersiveascension.datagen;
 
+import blusunrize.immersiveengineering.api.EnumMetals;
+import blusunrize.immersiveengineering.api.IETags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -21,13 +23,41 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.INSULATING_GLASS_STAIRS.get())
                 .add(ModBlocks.SLAG_GLASS_STAIRS.get())
-                .add(ModBlocks.SLAG_GLASS_SLAB.get());
+                .add(ModBlocks.SLAG_GLASS_SLAB.get())
+
+                .add(ModBlocks.CUT_URANIUM_BLOCK.get())
+                .add(ModBlocks.CUT_URANIUM_STAIRS.get())
+                .add(ModBlocks.CUT_URANIUM_SLAB.get())
+                .add(ModBlocks.PILLAR_URANIUM_BLOCK.get())
+                .add(ModBlocks.PILLAR_URANIUM_STAIRS.get())
+                .add(ModBlocks.PILLAR_URANIUM_SLAB.get());
 
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.INSULATING_GLASS_STAIRS.get())
-                .add(ModBlocks.SLAG_GLASS_STAIRS.get());
+                .add(ModBlocks.SLAG_GLASS_STAIRS.get())
+
+                .add(ModBlocks.CUT_URANIUM_STAIRS.get())
+                .add(ModBlocks.PILLAR_URANIUM_STAIRS.get());
 
         tag(BlockTags.SLABS)
-                .add(ModBlocks.SLAG_GLASS_SLAB.get());
+                .add(ModBlocks.SLAG_GLASS_SLAB.get())
+                .add(ModBlocks.CUT_URANIUM_SLAB.get())
+                .add(ModBlocks.PILLAR_URANIUM_SLAB.get());
+
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.CUT_URANIUM_BLOCK.get())
+                .add(ModBlocks.PILLAR_URANIUM_BLOCK.get());
+
+        tag(IETags.grindingDiskHarvestable)
+                .add(ModBlocks.CUT_URANIUM_BLOCK.get())
+                .add(ModBlocks.CUT_URANIUM_STAIRS.get())
+                .add(ModBlocks.CUT_URANIUM_SLAB.get())
+                .add(ModBlocks.PILLAR_URANIUM_BLOCK.get())
+                .add(ModBlocks.PILLAR_URANIUM_STAIRS.get())
+                .add(ModBlocks.PILLAR_URANIUM_SLAB.get());
+
+        tag(IETags.getTagsFor(EnumMetals.URANIUM).storage)
+                .add(ModBlocks.CUT_URANIUM_BLOCK.get())
+                .add(ModBlocks.PILLAR_URANIUM_BLOCK.get());
     }
 }
