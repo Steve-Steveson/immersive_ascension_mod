@@ -2,6 +2,9 @@
   "values": [
     "immersive_ascension:cut_uranium_block",
     "immersive_ascension:cut_uranium_stairs",
-    "immersive_ascension:cut_uranium_slab"
+    "immersive_ascension:cut_uranium_slab",
+    "immersive_ascension:pillar_uranium_block",
+    "immersive_ascension:pillar_uranium_stairs",
+    "immersive_ascension:pillar_uranium_slab"
   ]
 }

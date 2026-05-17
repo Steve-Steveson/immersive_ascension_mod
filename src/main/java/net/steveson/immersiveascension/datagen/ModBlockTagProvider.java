@@ -24,7 +24,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.INSULATING_GLASS_STAIRS.get())
                 .add(ModBlocks.SLAG_GLASS_STAIRS.get())
                 .add(ModBlocks.SLAG_GLASS_SLAB.get())
-
+                .add(ModBlocks.COKE_STAIRS.get())
+                .add(ModBlocks.COKEBRICK_STAIRS.get())
+                .add(ModBlocks.BLASTBRICK_STAIRS.get())
+                .add(ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get())
+                .add(ModBlocks.ALLOYBRICK_STAIRS.get())
                 .add(ModBlocks.CUT_URANIUM_BLOCK.get())
                 .add(ModBlocks.CUT_URANIUM_STAIRS.get())
                 .add(ModBlocks.CUT_URANIUM_SLAB.get())
@@ -35,7 +39,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.INSULATING_GLASS_STAIRS.get())
                 .add(ModBlocks.SLAG_GLASS_STAIRS.get())
-
+                .add(ModBlocks.COKE_STAIRS.get())
+                .add(ModBlocks.COKEBRICK_STAIRS.get())
+                .add(ModBlocks.BLASTBRICK_STAIRS.get())
+                .add(ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get())
+                .add(ModBlocks.ALLOYBRICK_STAIRS.get())
                 .add(ModBlocks.CUT_URANIUM_STAIRS.get())
                 .add(ModBlocks.PILLAR_URANIUM_STAIRS.get());
 

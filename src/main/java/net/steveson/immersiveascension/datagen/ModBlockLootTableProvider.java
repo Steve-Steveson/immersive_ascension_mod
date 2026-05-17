@@ -23,6 +23,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
 
 
+
+        dropSelf(ModBlocks.COKE_STAIRS.get());
+        dropSelf(ModBlocks.COKEBRICK_STAIRS.get());
+        dropSelf(ModBlocks.BLASTBRICK_STAIRS.get());
+        dropSelf(ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get());
+        dropSelf(ModBlocks.ALLOYBRICK_STAIRS.get());
+
         dropSelf(ModBlocks.CUT_URANIUM_BLOCK.get());
         dropSelf(ModBlocks.CUT_URANIUM_STAIRS.get());
         add(ModBlocks.CUT_URANIUM_SLAB.get(),

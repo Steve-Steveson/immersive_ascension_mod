@@ -97,6 +97,12 @@ public class ImmersiveAscensionMod {
             event.accept(ModBlocks.SLAG_GLASS_STAIRS);
             event.accept(ModBlocks.SLAG_GLASS_SLAB);
 
+
+            event.accept(ModBlocks.COKE_STAIRS);
+            event.accept(ModBlocks.COKEBRICK_STAIRS);
+            event.accept(ModBlocks.BLASTBRICK_STAIRS);
+            event.accept(ModBlocks.BLASTBRICK_REINFORCED_STAIRS);
+            event.accept(ModBlocks.ALLOYBRICK_STAIRS);
             event.accept(ModBlocks.CUT_URANIUM_BLOCK);
             event.accept(ModBlocks.CUT_URANIUM_STAIRS);
             event.accept(ModBlocks.CUT_URANIUM_SLAB);

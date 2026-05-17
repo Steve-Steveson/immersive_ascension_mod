@@ -18,14 +18,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        stairsBlock(ModBlocks.COKE_STAIRS.get(), rl("block/stone_decoration/coke"));
+        stairsBlock(ModBlocks.COKEBRICK_STAIRS.get(), rl("block/stone_decoration/cokebrick"));
+        stairsBlock(ModBlocks.BLASTBRICK_STAIRS.get(), rl("block/stone_decoration/blastbrick"));
+        stairsBlock(ModBlocks.BLASTBRICK_REINFORCED_STAIRS.get(), rl("block/stone_decoration/blastbrick_reinforced"));
+        stairsBlock(ModBlocks.ALLOYBRICK_STAIRS.get(), rl("block/stone_decoration/alloybrick"));
+
         stairsBlock(ModBlocks.CUT_URANIUM_STAIRS.get(), rl("block/metal/storage_uranium_side"));
         slabBlock(ModBlocks.CUT_URANIUM_SLAB.get(), blockTexture(ModBlocks.CUT_URANIUM_BLOCK.get()), rl("block/metal/storage_uranium_side"));
         stairsBlock(ModBlocks.PILLAR_URANIUM_STAIRS.get(), rl("block/metal/storage_uranium_top"), rl("block/metal/storage_uranium_side"), rl("block/metal/storage_uranium_side"));
         slabBlock(ModBlocks.PILLAR_URANIUM_SLAB.get(), blockTexture(ModBlocks.PILLAR_URANIUM_BLOCK.get()), rl("block/metal/storage_uranium_top"), rl("block/metal/storage_uranium_side"), rl("block/metal/storage_uranium_side"));
 
+
+
         blockItem(ModBlocks.INSULATING_GLASS_STAIRS);
         blockItem(ModBlocks.SLAG_GLASS_STAIRS);
         blockItem(ModBlocks.SLAG_GLASS_SLAB);
+
+        blockItem(ModBlocks.COKE_STAIRS);
+        blockItem(ModBlocks.COKEBRICK_STAIRS);
+        blockItem(ModBlocks.BLASTBRICK_STAIRS);
+        blockItem(ModBlocks.BLASTBRICK_REINFORCED_STAIRS);
+        blockItem(ModBlocks.ALLOYBRICK_STAIRS);
 
         blockItem(ModBlocks.CUT_URANIUM_BLOCK);
         blockItem(ModBlocks.CUT_URANIUM_STAIRS);

@@ -50,6 +50,30 @@ public class ModBlocks {
             });
 
 
+
+
+    public static final DeferredBlock<StairBlock> COKE_STAIRS = registerFuelBlock("stairs_coke",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.COKE.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.COKE.get())), 32000);
+
+    public static final DeferredBlock<StairBlock> COKEBRICK_STAIRS = registerBlock("stairs_cokebrick",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.COKEBRICK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.COKEBRICK.get())));
+
+    public static final DeferredBlock<StairBlock> BLASTBRICK_STAIRS = registerBlock("stairs_blastbrick",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.BLASTBRICK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.BLASTBRICK.get())));
+
+    public static final DeferredBlock<StairBlock> BLASTBRICK_REINFORCED_STAIRS = registerBlock("stairs_blastbrick_reinforced",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.BLASTBRICK_REINFORCED.get())));
+
+    public static final DeferredBlock<StairBlock> ALLOYBRICK_STAIRS = registerBlock("stairs_alloybrick",
+            ()-> new StairBlock( IEBlocks.StoneDecoration.ALLOYBRICK.defaultBlockState(),
+                    BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.StoneDecoration.ALLOYBRICK.get())));
+
+
+
     public static final DeferredBlock<Block> CUT_URANIUM_BLOCK = registerBlock("cut_uranium_block",
             ()-> new Block(BlockBehaviour.Properties.ofLegacyCopy(IEBlocks.Metals.STORAGE.get(EnumMetals.URANIUM).get())));
 
@@ -69,6 +93,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<SlabBlock> PILLAR_URANIUM_SLAB = registerBlock("pillar_uranium_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.ofLegacyCopy(ModBlocks.PILLAR_URANIUM_BLOCK.get())));
+
 
 
 

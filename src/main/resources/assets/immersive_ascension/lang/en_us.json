@@ -5,6 +5,14 @@
 
 
 
+
+
+  "block.immersive_ascension.stairs_coke": "Coal Coke Stairs",
+  "block.immersive_ascension.stairs_cokebrick": "Coke Brick Stairs",
+  "block.immersive_ascension.stairs_blastbrick": "Blast Brick Stairs",
+  "block.immersive_ascension.stairs_blastbrick_reinforced": "Reinforced Blast Brick Stairs",
+  "block.immersive_ascension.stairs_alloybrick": "Kiln Brick Stairs",
+
   "block.immersive_ascension.cut_uranium_block": "Cut Uranium Block",
   "block.immersive_ascension.cut_uranium_stairs": "Cut Uranium Stairs",
   "block.immersive_ascension.cut_uranium_slab": "Cut Uranium Slab",
