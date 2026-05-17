@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "U": {
+      "tag": "c:storage_blocks/uranium"
+    }
+  },
+  "pattern": [
+    "U",
+    "U"
+  ],
+  "result": {
+    "count": 2,
+    "id": "immersive_ascension:pillar_uranium_block"
+  }
+}

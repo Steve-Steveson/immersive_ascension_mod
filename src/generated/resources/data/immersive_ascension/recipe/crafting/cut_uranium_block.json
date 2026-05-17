@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "U": {
+      "tag": "c:storage_blocks/uranium"
+    }
+  },
+  "pattern": [
+    "UU",
+    "UU"
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersive_ascension:cut_uranium_block"
+  }
+}

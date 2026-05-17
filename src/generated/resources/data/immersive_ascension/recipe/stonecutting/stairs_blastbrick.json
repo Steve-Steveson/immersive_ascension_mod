@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "immersiveengineering:blastbrick"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_ascension:stairs_blastbrick"
+  }
+}

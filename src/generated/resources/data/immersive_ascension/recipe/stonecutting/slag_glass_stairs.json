@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "immersiveengineering:slag_glass"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_ascension:slag_glass_stairs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "immersiveengineering:alloybrick"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_ascension:stairs_alloybrick"
+  }
+}
