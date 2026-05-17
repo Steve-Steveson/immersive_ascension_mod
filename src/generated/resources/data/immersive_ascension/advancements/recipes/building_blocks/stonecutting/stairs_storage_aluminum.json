@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_storage_aluminum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "immersiveengineering:storage_aluminum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "immersive_ascension:stonecutting/stairs_storage_aluminum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_storage_aluminum",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_ascension:stonecutting/stairs_storage_aluminum"
+    ]
+  },
+  "sends_telemetry_event": false
+}

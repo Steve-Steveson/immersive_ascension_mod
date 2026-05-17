@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "immersiveengineering:coke"
+  },
+  "result": "immersive_ascension:stairs_coke"
+}

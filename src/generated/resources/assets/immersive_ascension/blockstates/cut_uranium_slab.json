@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "immersive_ascension:block/cut_uranium_slab"
+    },
+    "type=double": {
+      "model": "immersive_ascension:block/cut_uranium_block"
+    },
+    "type=top": {
+      "model": "immersive_ascension:block/cut_uranium_slab_top"
+    }
+  }
+}

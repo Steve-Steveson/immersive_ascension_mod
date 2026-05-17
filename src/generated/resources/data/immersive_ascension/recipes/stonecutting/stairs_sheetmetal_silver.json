@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "immersiveengineering:sheetmetal_silver"
+  },
+  "result": "immersive_ascension:stairs_sheetmetal_silver"
+}

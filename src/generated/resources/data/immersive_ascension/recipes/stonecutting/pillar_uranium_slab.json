@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "tag": "forge:storage_blocks/uranium"
+  },
+  "result": "immersive_ascension:pillar_uranium_slab"
+}

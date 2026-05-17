@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "immersiveengineering:sheetmetal_colored_magenta"
+    }
+  },
+  "pattern": [
+    "I  ",
+    "II ",
+    "III"
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersive_ascension:colored_stairs_sheetmetal_magenta"
+  },
+  "show_notification": true
+}

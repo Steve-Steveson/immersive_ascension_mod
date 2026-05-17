@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "U": {
+      "item": "immersive_ascension:pillar_uranium_slab"
+    }
+  },
+  "pattern": [
+    "U",
+    "U"
+  ],
+  "result": {
+    "item": "immersive_ascension:pillar_uranium_block"
+  },
+  "show_notification": true
+}
