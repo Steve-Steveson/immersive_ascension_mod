@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -36,6 +37,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerStonecuttingRecipe(IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_STAIRS, recipeOutput);
         registerStonecuttingRecipe(IEBlocks.StoneDecoration.SLAG_GLASS, ModBlocks.SLAG_GLASS_SLAB, recipeOutput, 2);
 
+
+        for(EnumMetals m : EnumMetals.values())
+        {
+            if(!m.isVanillaMetal())
+            {
+                registerStairsCraftingRecipe(IEBlocks.Metals.STORAGE.get(m), ModBlocks.STORAGE_STAIRS.get(m), recipeOutput);
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(IETags.getItemTag(IETags.getTagsFor(m).storage)), RecipeCategory.BUILDING_BLOCKS, ModBlocks.STORAGE_STAIRS.get(m).get(), 1)
+                        .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(m)), has(IEBlocks.Metals.STORAGE.get(m)))
+                        .save(recipeOutput,  ImmersiveAscensionMod.MOD_ID + ":" + "stonecutting/" + getItemName(ModBlocks.STORAGE_STAIRS.get(m).get()));
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(IETags.getItemTag(IETags.getTagsFor(m).storage)), RecipeCategory.BUILDING_BLOCKS,
+                                IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.STORAGE.get(m).get())), 2)
+                        .unlockedBy(getHasName(IEBlocks.Metals.STORAGE.get(m)), has(IEBlocks.Metals.STORAGE.get(m)))
+                        .save(recipeOutput,  ImmersiveAscensionMod.MOD_ID + ":" + "stonecutting/" + getItemName(IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.STORAGE.get(m).get()))));
+            }
+            registerStairsCraftingRecipe(IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), recipeOutput);
+            registerStonecuttingRecipe(IEBlocks.Metals.SHEETMETAL.get(m), ModBlocks.SHEETMETAL_STAIRS.get(m), recipeOutput);
+            registerStonecuttingRecipeIE(IEBlocks.Metals.SHEETMETAL.get(m), IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.Metals.SHEETMETAL.get(m).get())).get(), recipeOutput, 2);
+        }
+        for(DyeColor dye : DyeColor.values())
+        {
+            registerStairsCraftingRecipe(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), recipeOutput);
+            registerStonecuttingRecipe(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye), recipeOutput);
+            registerStonecuttingRecipeIE(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye), IEBlocks.TO_SLAB.get(BuiltInRegistries.BLOCK.getKey(IEBlocks.MetalDecoration.COLORED_SHEETMETAL.get(dye).get())).get(), recipeOutput, 2);
+        }
 
 
         registerStairsCraftingRecipe(IEBlocks.StoneDecoration.COKE, ModBlocks.COKE_STAIRS, recipeOutput);

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "immersiveengineering:sheetmetal_colored_gray"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_ascension:colored_stairs_sheetmetal_gray"
+  }
+}

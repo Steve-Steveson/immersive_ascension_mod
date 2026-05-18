@@ -1,6 +1,8 @@
 package net.steveson.immersiveascension;
 
+import blusunrize.immersiveengineering.api.EnumMetals;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.steveson.immersiveascension.block.ModBlocks;
 import net.steveson.immersiveascension.item.ModItems;
 import org.slf4j.Logger;
@@ -96,8 +98,17 @@ public class ImmersiveAscensionMod {
             event.accept(ModBlocks.INSULATING_GLASS_STAIRS);
             event.accept(ModBlocks.SLAG_GLASS_STAIRS);
             event.accept(ModBlocks.SLAG_GLASS_SLAB);
-
-
+            for(EnumMetals m : EnumMetals.values())
+            {
+                if(!m.isVanillaMetal())
+                {
+                    event.accept(ModBlocks.STORAGE_STAIRS.get(m));
+                }
+                event.accept(ModBlocks.SHEETMETAL_STAIRS.get(m));
+            }
+            for(DyeColor dye : DyeColor.values()){
+                event.accept(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye));
+            }
             event.accept(ModBlocks.COKE_STAIRS);
             event.accept(ModBlocks.COKEBRICK_STAIRS);
             event.accept(ModBlocks.BLASTBRICK_STAIRS);

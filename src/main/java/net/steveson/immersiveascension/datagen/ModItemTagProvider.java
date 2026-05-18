@@ -7,9 +7,11 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.steveson.immersiveascension.ImmersiveAscensionMod;
+import net.steveson.immersiveascension.api.IAItemTags;
 import net.steveson.immersiveascension.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,7 +44,25 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.CUT_URANIUM_BLOCK.get().asItem())
                 .add(ModBlocks.PILLAR_URANIUM_BLOCK.get().asItem());
 
+        for(EnumMetals metal : EnumMetals.values())
+        {
+            if(!metal.isVanillaMetal())
+            {
+                tag(ItemTags.STAIRS)
+                        .add(ModBlocks.STORAGE_STAIRS.get(metal).get().asItem());
+            }
+            tag(ItemTags.STAIRS)
+                    .add(ModBlocks.SHEETMETAL_STAIRS.get(metal).get().asItem());
+            tag(IAItemTags.STAIRS_SHEETMETAL)
+                    .add(ModBlocks.SHEETMETAL_STAIRS.get(metal).get().asItem());
+        }
 
-
+        for(DyeColor dye : DyeColor.values())
+        {
+            tag(ItemTags.STAIRS)
+                    .add(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get().asItem());
+            tag(IAItemTags.STAIRS_SHEETMETAL)
+                    .add(ModBlocks.COLORED_SHEETMETAL_STAIRS.get(dye).get().asItem());
+        }
     }
 }
